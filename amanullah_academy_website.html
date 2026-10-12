@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Amanullah Academy | Learn • Grow • Succeed</title>
+<style>
+:root{--navy:#07365d;--blue:#0876c9;--sky:#eaf5ff;--ink:#173b5e;--muted:#536b83;--white:#fff;--line:#dce9f5}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;font-family:Arial,Helvetica,sans-serif;color:var(--ink);background:#fff;line-height:1.6}
+a{color:inherit;text-decoration:none}
+header{background:var(--navy);color:#fff;position:sticky;top:0;z-index:10;box-shadow:0 2px 12px #092b4720}
+.nav-wrap{max-width:1180px;margin:auto;padding:12px 22px;display:flex;align-items:center;justify-content:space-between;gap:24px}
+.brand{display:flex;align-items:center;gap:12px;min-width:max-content}
+.logo{font-size:35px;line-height:1}
+.brand h1{font-size:22px;margin:0;line-height:1.2}
+.brand small{display:block;letter-spacing:1px;color:#d7eaff;font-size:12px;margin-top:3px}
+nav{display:flex;align-items:center;gap:22px;font-size:13px}
+nav a:hover,nav a:focus{color:#8bd5ff}
+.btn{display:inline-block;border:0;border-radius:28px;padding:11px 19px;background:var(--blue);color:white;font-weight:700;cursor:pointer;font-size:14px;transition:.2s}
+.btn:hover{background:#055da2;transform:translateY(-1px)}
+.btn.outline{background:transparent;border:1px solid var(--blue);color:var(--blue)}
+.btn.outline:hover{background:var(--sky)}
+.menu-btn{display:none;background:transparent;color:white;border:1px solid #ffffff66;border-radius:8px;padding:7px 10px;font-size:20px}
+.hero{background:linear-gradient(90deg,#edf7ff 0%,#edf7ffed 42%,#edf7ff35 72%),url('https://images.unsplash.com/photo-1562774053-701939374585?auto=format&fit=crop&w=1800&q=85') center/cover;min-height:345px;display:flex;align-items:center}
+.hero-inner{max-width:1180px;width:100%;margin:auto;padding:44px 22px}
+.eyebrow{text-transform:uppercase;letter-spacing:3px;color:var(--blue);font-weight:700;font-size:12px}
+.hero h2{font-size:clamp(30px,4vw,43px);line-height:1.14;max-width:540px;margin:12px 0;color:#0a3a62}
+.hero p{max-width:510px;color:#294d6e;margin:0 0 20px}
+.actions{display:flex;gap:12px;flex-wrap:wrap}
+.features{background:#f5faff;border-bottom:1px solid var(--line)}
+.feature-grid{max-width:1180px;margin:auto;padding:24px 22px;display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
+.feature{display:flex;gap:13px;align-items:flex-start}
+.feature-icon,.program-icon{width:48px;height:48px;border-radius:50%;background:#dff0ff;color:var(--blue);display:grid;place-items:center;font-size:23px;flex-shrink:0}
+.feature h3{font-size:15px;margin:3px 0 4px}
+.feature p{font-size:12px;color:var(--muted);margin:0}
+.section{max-width:1180px;margin:auto;padding:30px 22px}
+.about-grid{display:grid;grid-template-columns:1fr 1.35fr 1fr;gap:26px;align-items:center}
+.about-photo{width:100%;height:190px;object-fit:cover;border-radius:10px}
+h2.section-title{font-size:23px;margin:0 0 13px;color:#0b3d67}
+h2.section-title:after{content:"";display:block;width:38px;height:3px;background:var(--blue);margin-top:7px;border-radius:4px}
+.about-copy p{font-size:13px;color:var(--muted);margin:0 0 14px}
+.small-btn{padding:8px 16px;font-size:12px}
+.vision{background:#eef7ff;padding:16px;border-radius:10px}
+.vision-item{display:flex;gap:12px}
+.vision-item+.vision-item{border-top:1px solid #d5e7f7;margin-top:12px;padding-top:12px}
+.vision-icon{font-size:22px;color:var(--blue)}
+.vision h3{font-size:14px;margin:0 0 4px}
+.vision p{font-size:12px;color:var(--muted);margin:0}
+.programs{padding-top:0}
+.program-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
+.program-card{border:1px solid var(--line);border-radius:9px;padding:15px;display:flex;gap:12px;background:#fbfdff;transition:.2s}
+.program-card:hover{box-shadow:0 8px 22px #0a3a6210;transform:translateY(-2px)}
+.program-card h3{font-size:13px;margin:2px 0}
+.program-card p{font-size:11px;color:var(--muted);margin:2px 0 5px}
+.program-card a{font-size:11px;color:var(--blue);font-weight:bold}
+footer{background:var(--navy);color:#fff}
+.footer-grid{max-width:1180px;margin:auto;padding:22px;display:grid;grid-template-columns:1.2fr 1fr 1.4fr .7fr;gap:26px}
+footer h3{font-size:15px;margin:0 0 5px}
+footer h4{font-size:12px;margin:0 0 7px}
+footer p,footer a{font-size:11px;color:#d8e8f7;margin:2px 0;display:block}
+footer a:hover{color:#8bd5ff}
+.footer-links{display:grid;grid-template-columns:1fr 1fr;gap:0 12px}
+.copyright{text-align:center;border-top:1px solid #ffffff22;padding:10px;font-size:10px;color:#d8e8f7}
+.modal-backdrop{display:none;position:fixed;inset:0;background:#071c2dcc;z-index:30;align-items:center;justify-content:center;padding:18px}
+.modal-backdrop.show{display:flex}
+.modal{background:white;border-radius:14px;padding:25px;width:min(460px,100%);box-shadow:0 20px 60px #0003;position:relative}
+.modal h2{margin:0 0 5px;color:var(--navy)}
+.modal p{color:var(--muted);font-size:14px;margin-top:4px}
+.close{position:absolute;right:14px;top:12px;border:0;background:#edf5fc;border-radius:50%;width:32px;height:32px;font-size:19px;cursor:pointer}
+form label{display:block;font-size:13px;font-weight:bold;margin:12px 0 5px}
+form input,form select,form textarea{width:100%;padding:10px;border:1px solid #cbdceb;border-radius:7px;font:inherit}
+form textarea{min-height:80px;resize:vertical}
+.notice{display:none;background:#e8f8ef;color:#17653a;padding:10px;border-radius:7px;font-size:13px;margin-top:12px}
+.notice.show{display:block}
+@media(max-width:900px){nav{gap:12px}.nav-wrap{gap:12px}.brand h1{font-size:19px}.feature-grid,.program-grid{grid-template-columns:repeat(2,1fr)}.about-grid{grid-template-columns:1fr 1fr}.vision{grid-column:1/-1}.footer-grid{grid-template-columns:1fr 1fr}}
+@media(max-width:650px){.nav-wrap{flex-wrap:wrap}.menu-btn{display:block;margin-left:auto}nav{display:none;order:3;width:100%;flex-direction:column;align-items:stretch;gap:0;padding-top:8px}nav.open{display:flex}nav a{padding:10px 4px;border-top:1px solid #ffffff20}.nav-login{display:none}.brand h1{font-size:18px}.hero{min-height:390px;background:linear-gradient(90deg,#edf7ffef,#edf7ffbd),url('https://images.unsplash.com/photo-1562774053-701939374585?auto=format&fit=crop&w=1000&q=80') center/cover}.hero-inner{padding:35px 20px}.hero h2{font-size:32px}.feature-grid{grid-template-columns:1fr 1fr;padding:20px}.feature{gap:9px}.feature-icon{width:40px;height:40px;font-size:19px}.about-grid{grid-template-columns:1fr}.about-photo{height:210px}.vision{grid-column:auto}.program-grid{grid-template-columns:1fr}.footer-grid{grid-template-columns:1fr 1fr;gap:20px}.section{padding:26px 20px}}
+@media(max-width:390px){.feature-grid,.footer-grid{grid-template-columns:1fr}.brand small{font-size:10px}}
+</style>
+</head>
+<body>
+<header>
+  <div class="nav-wrap">
+    <a class="brand" href="#home" aria-label="Amanullah Academy home"><span class="logo">📘</span><span><h1>Amanullah Academy</h1><small>Learn · Grow · Succeed</small></span></a>
+    <button class="menu-btn" id="menuBtn" aria-label="Toggle navigation" aria-expanded="false">☰</button>
+    <nav id="mainNav">
+      <a href="#home">Home</a><a href="#about">About Us</a><a href="#academics">Academics</a><a href="#admissions">Admissions</a><a href="#gallery">Gallery</a><a href="#contact">Contact</a>
+    </nav>
+    <button class="btn nav-login" data-modal="login">Student Login</button>
+  </div>
+</header>
+<main>
+<section class="hero" id="home">
+  <div class="hero-inner">
+    <div class="eyebrow">Welcome to Amanullah Academy</div>
+    <h2>Building Bright Futures Through Quality Education</h2>
+    <p>At Amanullah Academy, we believe in nurturing every child's potential with a safe, supportive and inspiring learning environment.</p>
+    <div class="actions"><button class="btn" data-modal="admission">Apply for Admission&nbsp; →</button><a class="btn outline" href="#about">Learn More</a></div>
+  </div>
+</section>
+<section class="features" aria-label="Academy highlights">
+  <div class="feature-grid">
+    <div class="feature"><div class="feature-icon">▤</div><div><h3>Qualified Teachers</h3><p>Experienced and caring faculty for better learning.</p></div></div>
+    <div class="feature"><div class="feature-icon">🎓</div><div><h3>Modern Learning</h3><p>Smart classrooms and digital resources.</p></div></div>
+    <div class="feature"><div class="feature-icon">👥</div><div><h3>Safe Environment</h3><p>A secure and positive campus for every child.</p></div></div>
+    <div class="feature"><div class="feature-icon">★</div><div><h3>Holistic Development</h3><p>Academic, moral and personal growth.</p></div></div>
+  </div>
+</section>
+<section class="section about-grid" id="about">
+  <img class="about-photo" id="gallery" src="https://images.unsplash.com/photo-1427504494785-3a9ca7044f45?auto=format&fit=crop&w=900&q=85" alt="Students learning together in a classroom">
+  <div class="about-copy"><h2 class="section-title">About Us</h2><p>Amanullah Academy is a place where learning meets values. We are committed to providing high-quality education that helps students grow academically, socially and morally. Our goal is to prepare them for a successful future and make a positive difference in the world.</p><button class="btn small-btn" data-modal="about">Read More&nbsp; →</button></div>
+  <div class="vision">
+    <div class="vision-item"><div class="vision-icon">◎</div><div><h3>Our Vision</h3><p>To be a leading educational institution that inspires excellence, builds character and creates future leaders.</p></div></div>
+    <div class="vision-item"><div class="vision-icon">🌱</div><div><h3>Our Mission</h3><p>To provide quality education, develop strong values and empower every student to reach their full potential.</p></div></div>
+  </div>
+</section>
+<section class="section programs" id="academics">
+  <h2 class="section-title">Our Programs</h2>
+  <div class="program-grid">
+    <article class="program-card"><div class="program-icon">▤</div><div><h3>Primary School</h3><p>Classes 1–5 · Strong basics for a bright future.</p><a href="#admissions" data-program="Primary School">Learn More →</a></div></article>
+    <article class="program-card"><div class="program-icon">🎓</div><div><h3>Middle School</h3><p>Classes 6–8 · Building knowledge and confidence.</p><a href="#admissions" data-program="Middle School">Learn More →</a></div></article>
+    <article class="program-card"><div class="program-icon">📚</div><div><h3>High School</h3><p>Classes 9–10 · Preparing for greater opportunities.</p><a href="#admissions" data-program="High School">Learn More →</a></div></article>
+    <article class="program-card"><div class="program-icon">⚗</div><div><h3>FSc / Intermediate</h3><p>Classes 11–12 · Focus on higher goals and careers.</p><a href="#admissions" data-program="FSc / Intermediate">Learn More →</a></div></article>
+  </div>
+</section>
+<div id="admissions"></div>
+</main>
+<footer id="contact">
+  <div class="footer-grid">
+    <div><h3>Amanullah Academy</h3><p>Learn · Grow · Succeed</p></div>
+    <div><h4>Quick Links</h4><div class="footer-links"><a href="#home">Home</a><a href="#admissions">Admissions</a><a href="#about">About Us</a><a href="#gallery">Gallery</a><a href="#academics">Academics</a><a href="#contact">Contact</a></div></div>
+    <div><h4>Contact Us</h4><p>☎ +92 300 1234567</p><p>✉ info@amanullahacademy.edu.pk</p><p>⌖ Your School Address, Pakistan</p></div>
+    <div><h4>Follow Us</h4><p><a href="#contact">Facebook · Instagram · YouTube</a></p></div>
+  </div>
+  <div class="copyright">© <span id="year"></span> Amanullah Academy. All Rights Reserved.</div>
+</footer>
+
+<div class="modal-backdrop" id="modalBackdrop" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+  <div class="modal">
+    <button class="close" id="closeModal" aria-label="Close dialog">×</button>
+    <h2 id="modalTitle">Welcome</h2>
+    <p id="modalIntro">Please enter your details below.</p>
+    <form id="actionForm">
+      <div id="formFields"></div>
+      <button class="btn" type="submit" id="submitBtn">Submit</button>
+      <div class="notice" id="formNotice" role="status"></div>
+    </form>
+  </div>
+</div>
+<script>
+const nav=document.getElementById('mainNav'),menuBtn=document.getElementById('menuBtn');
+menuBtn.addEventListener('click',()=>{const open=nav.classList.toggle('open');menuBtn.setAttribute('aria-expanded',String(open));});
+nav.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{nav.classList.remove('open');menuBtn.setAttribute('aria-expanded','false')}));
+document.getElementById('year').textContent=new Date().getFullYear();
+const backdrop=document.getElementById('modalBackdrop'),title=document.getElementById('modalTitle'),intro=document.getElementById('modalIntro'),fields=document.getElementById('formFields'),notice=document.getElementById('formNotice'),submit=document.getElementById('submitBtn');
+const configs={
+ admission:{title:'Admission Enquiry',intro:'Share your details and the school team can follow up.',button:'Send Enquiry',fields:[['Student name','text','student','Enter student name'],['Parent / guardian name','text','parent','Enter parent name'],['Class applying for','select','class','Choose a class'],['Contact number','tel','phone','03XX XXXXXXX']]},
+ login:{title:'Student Login',intro:'Demo login form — connect this to your school portal to enable real accounts.',button:'Continue',fields:[['Student ID','text','studentid','Enter student ID'],['Password','password','password','Enter password']]},
+ about:{title:'About Amanullah Academy',intro:'We aim to help students learn with confidence, kindness and curiosity through supportive teaching and a balanced education.',button:'Close',fields:[]}
+};
+function openModal(type,program){const c=configs[type]||configs.admission;title.textContent=c.title;intro.textContent=c.intro;submit.textContent=c.button;fields.innerHTML='';notice.classList.remove('show');notice.textContent='';
+c.fields.forEach(([label,type,name,placeholder])=>{const lab=document.createElement('label');lab.htmlFor='f-'+name;lab.textContent=label;fields.appendChild(lab);let input;
+if(type==='select'){input=document.createElement('select');input.innerHTML='<option value="">Choose a class</option><option>Primary School (1–5)</option><option>Middle School (6–8)</option><option>High School (9–10)</option><option>FSc / Intermediate (11–12)</option>';if(program)input.value=program;}
+else{input=document.createElement('input');input.type=type;input.placeholder=placeholder;}
+input.id='f-'+name;input.name=name;input.required=true;fields.appendChild(input)});
+if(type==='about'){submit.onclick=()=>closeModal();submit.type='button'}else{submit.onclick=null;submit.type='submit'}
+backdrop.classList.add('show');const first=fields.querySelector('input,select');if(first)first.focus();
+}
+function closeModal(){backdrop.classList.remove('show')}
+document.querySelectorAll('[data-modal]').forEach(el=>el.addEventListener('click',()=>openModal(el.dataset.modal)));
+document.querySelectorAll('[data-program]').forEach(el=>el.addEventListener('click',e=>{e.preventDefault();openModal('admission',el.dataset.program)}));
+document.getElementById('closeModal').addEventListener('click',closeModal);
+backdrop.addEventListener('click',e=>{if(e.target===backdrop)closeModal()});
+document.addEventListener('keydown',e=>{if(e.key==='Escape')closeModal()});
+document.getElementById('actionForm').addEventListener('submit',e=>{e.preventDefault();notice.textContent=title.textContent==='Student Login'?'This is a demo only. A real student account system must be connected.':'Thank you! Your details are ready, but this demo does not send information to the school yet.';notice.classList.add('show');});
+</script>
+</body>
+</html>
